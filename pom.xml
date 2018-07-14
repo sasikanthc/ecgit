@@ -24,43 +24,7 @@
 <groupId>org.apache.maven.plugins</groupId>
 <artifactId>maven-release-plugin</artifactId>
 <version>2.4.2</version>
-  <profiles>
-    <profile>
-      <id>insecurecentral</id>
-      <!--Override the repository (and pluginRepository) "central" from the Maven Super POM -->
-      <repositories>
-        <repository>
-          <id>central</id>
-          <url>http://repo.maven.apache.org/maven2</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <id>central</id>
-          <url>http://repo.maven.apache.org/maven2</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-        </pluginRepository>
-      </pluginRepositories>
-    </profile>
-    <profile>
-     <id>sonar</id>
-     <activation>
-                <activeByDefault>true</activeByDefault>
-     </activation>
-            <properties>
-                <!-- Optional URL to server. Default value is http://localhost:9000 -->
-                <sonar.host.url>
-                  http://localhost:9000
-                </sonar.host.url>
-            </properties>
-    </profile>
-  </profiles>
-
+</plugin>
 </plugins>
 </build>
 <url>http://maven.apache.org</url>
@@ -72,7 +36,10 @@
 <scope>test</scope>
 </dependency>
 </dependencies>
-
+<scm>
+<connection>scm:svn:http://192.168.33.21:8081/subversion/</connection>
+<developerConnection>scm:svn:http://192.168.33.21:8081/subversion/</developerConnection>
+</scm>
 <distributionManagement>
 <repository>
 <id>ARTECH</id>
